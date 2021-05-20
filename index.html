@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sewing App</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous"/>
+    <link rel="stylesheet" href="styles.css"/>
+</head>
+<body>
+    <div class="grid-container">
+        <div class="left-container">
+            <i class="fas fa-palette" id="palette"></i>
+            <h1>App Name</h1>
+            <div class="align-slider">
+                <label id="scaleLabel">Scale: 4</label>
+                <input type="range" min="4" max="32" value="4" id="scaleRange" oninput="updateScaleLabel()">
+            </div>
+            <input type="file" accept="image/*" id="fileSubmit" onchange="submit(event)"/>
+            <input type="submit" id="download" value="Download"/>
+        </div>
+
+        <div class="right-container">
+            <canvas id="canvas"></canvas>
+        </div>
+    </div>
+    <script src="app.js"></script>
+</body>
+</html>
