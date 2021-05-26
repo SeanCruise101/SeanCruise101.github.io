@@ -20,7 +20,7 @@ body {
 
 canvas {
     image-rendering: pixelated;
-    background-color: white;
+    background-color: orange;
 }
 
 .grid-container {
