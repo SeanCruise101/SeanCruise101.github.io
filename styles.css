@@ -1,10 +1,11 @@
-@import url('https://fonts.googleapis.com/css2?family=Caveat&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300&display=swap');
 
 * {
     margin: 0px;
     padding: 0px;
     box-sizing: border-box;
-    font-family: 'Caveat', cursive;
+    font-family: 'Quicksand', sans-serif;
 }
 
 html, body {
@@ -14,7 +15,7 @@ html, body {
 }
 
 body {
-    background-color: #F5CCE8;
+    background-color: #FFA100;
 }
 
 canvas {
@@ -39,14 +40,14 @@ canvas {
     gap: 10px;
     grid-column: 1 / 2;
     grid-row: 1 / 2;
-    background-color: #C880B7;
+    background-color: #FF9000;
     height: 100%;
     border-right: solid 1px #4A2040;
     padding: 10px;
 }
 
 .right-container {
-    background-color: #F5CCE8;
+    background-color: #FFB100;
     grid-column: 2 / -1;
     grid-row: 1 / 2;
     height: 100%;
