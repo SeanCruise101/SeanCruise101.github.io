@@ -1,16 +1,16 @@
-let canvas = document.getElementById('canvas');
-let ctx = canvas.getContext('2d');
-let image = document.createElement('img');
-let rawImage = null;
-let width = 0;
-let height = 0;
-let cameraX = 0;
-let cameraY = 0;
+var canvas = document.getElementById('canvas');
+var ctx = canvas.getContext('2d');
+var image = document.createElement('img');
+var rawImage = null;
+var width = 0;
+var height = 0;
+var cameraX = 0;
+var cameraY = 0;
 
-let scaleRange = document.getElementById('scaleRange');
-let scaleLabel = document.getElementById('scaleLabel');
+var scaleRange = document.getElementById('scaleRange');
+var scaleLabel = document.getElementById('scaleLabel');
 
-let download = document.getElementById('download');
+var download = document.getElementById('download');
 
 function submit(event) {
     let reader = new FileReader();
