@@ -42,7 +42,7 @@ canvas {
     grid-row: 1 / 2;
     background-image:url('../images/container1.jpg');
     height: 100%;
-    border-right: solid 1px #4A2040;
+    border-right: solid 5px #4A2040;
     padding: 10px;
 }
 
