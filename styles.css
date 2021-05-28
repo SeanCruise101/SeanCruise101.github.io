@@ -40,7 +40,7 @@ canvas {
     gap: 10px;
     grid-column: 1 / 2;
     grid-row: 1 / 2;
-    background-image:url('../images/container1.jpg');
+    background-color: #FFC100
     height: 100%;
     border-right: solid 5px #4A2040;
     padding: 10px;
