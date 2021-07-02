@@ -1,4 +1,4 @@
-var canvas = document.getElementById('canvas');
+var canvas = document.getElementById('normal');
 var ctx = canvas.getContext('2d');
 var image = document.createElement('img');
 var rawImage = null;
@@ -10,6 +10,9 @@ var cameraY = 0;
 var scaleRange = document.getElementById('scaleRange');
 var scaleLabel = document.getElementById('scaleLabel');
 
+var clothRange = document.getElementById('clothRange');
+var clothLabel = document.getElementById('clothCount');
+
 var download = document.getElementById('download');
 
 function submit(event) {
@@ -17,8 +20,17 @@ function submit(event) {
     reader.onload = function() {
         image.onload = function() {
             document.body.appendChild(image);
+            //Adds Image at bottom^
             width = this.width;
             height = this.height;
+            if(width > 420)
+            {
+                width = 420;
+            }
+            else if (height > 420)
+            {
+                height = 420;
+            }
             init();
             listAllColors();
         }
@@ -29,13 +41,10 @@ function submit(event) {
 
 function init() {
     let scale = parseInt(document.getElementById('scaleRange').value);
+    let clothScale = parseInt(document.getElementById('clothRange').value);
     canvas.width = width * scale + 1;
     canvas.height = height * scale + 1;
 
-    if(canvas.width > 1024 && canvas.height > 1024) {
-        canvas.width = 1024;
-        canvas.height = 1024;
-    }
 
     ctx.imageSmoothingEnabled = false;
     ctx.drawImage(image, 0, 0, width * scale, height * scale);
@@ -45,6 +54,7 @@ function init() {
     let xBigLine = 0;
     let yBigLine = 0;
 
+    //Draws the actual canvas
     for(let x = 0; x < canvas.width; x += scale) {
         ctx.beginPath();
         ctx.imageSmoothingEnabled = false;
@@ -84,9 +94,16 @@ scaleRange.addEventListener('change', (event) => {
     init();
 })
 
+clothRange.addEventListener('change', (event) => {
+    init();
+})
 function updateScaleLabel() {
-    scaleLabel.innerText = "Scale: " + scaleRange.value;
+    scaleLabel.innerText = "Canvas Size (inches): " + scaleRange.value;
 }
+
+function updateClothLabel() {
+    clothCount.innerText = "Cloth count: " + clothRange.value;
+}//Still needs to be fixed
 
 function listAllColors() {
     let map = new Map();
@@ -104,17 +121,17 @@ function listAllColors() {
         }
     }
 
-    map.forEach(element => {
+   /* map.forEach(element => {
         let p = document.createElement('p');
         let box = document.createElement('div');
-        box.width = "32px";
-        box.height = "32px";
+        box.width = "10px";
+        box.height = "10px";
         p.textContent = element;
         p.style.textAlign = "center";
-        p.style.color = "white";
+        p.style.color = "black";
         p.style.backgroundColor = element;
         document.body.appendChild(p);
-    });
+    });*/
 }
 
 download.addEventListener('click', (event) => {
@@ -128,3 +145,4 @@ download.addEventListener('click', (event) => {
 function rgbToHex(r, g, b) {
     return ((r << 16) | (g << 8) | b).toString(16);
 }
+
